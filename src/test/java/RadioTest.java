@@ -4,6 +4,72 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void test01() {
+        Radio radio = new Radio(400);
+
+        radio.setCurrentStation(399);
+
+        int expected = 399;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void test02() {
+        Radio radio = new Radio(400);
+
+        radio.setCurrentStation(400);
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void test03() {
+        Radio radio = new Radio(400);
+
+        radio.setCurrentStation(401);
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void test04() {
+        Radio radio = new Radio(400);
+
+        radio.setCurrentStation(218);
+
+        int expected = 218;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void test05() {
+        Radio radio = new Radio(400);
+
+        radio.setCurrentStation(399);
+        radio.next();
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+    @Test
+    public void test06() {
+        Radio radio = new Radio(400);
+
+        radio.setCurrentStation(0);
+        radio.prev();
+
+        int expected = 399;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+
+    @Test
     public void test1() {
         Radio radio = new Radio();
 
